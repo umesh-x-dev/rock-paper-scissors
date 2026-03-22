@@ -46,7 +46,7 @@ const draw=()=>{
         if(userwin){
               userscore++;
     userscorep.innerText = userscore;
-            msg.innerText="You win! ';
+            msg.innerText="You win! ";
             msg.style.backgroundColor="#4caf50";
         }
         else {
