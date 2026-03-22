@@ -17,7 +17,7 @@ compscore= 0;
 document.getElementById("userscore").innerText=userscore;
 
 document.getElementById("compscore").innerText=compscore;
-msg.innerText="Game reset. Play again!";
+msg.innerText=" Play again!";
   msg.style.backgroundColor="#24252d";
 }
 )
