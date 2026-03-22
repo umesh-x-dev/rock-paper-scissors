@@ -4,6 +4,24 @@ let compscore=0;
 const choices=document.querySelectorAll(".choice");
 const msg=document.querySelector("#msg");
 
+const userscorep= document.querySelector("#userscore");
+const compscorep = document.querySelector("#compscore");
+
+
+let resetbtn=document.getElementById("reset");
+resetbtn.addEventListener("click",function(){
+    userscore=0 ;
+compscore= 0;
+
+
+document.getElementById("userscore").innerText=userscore;
+
+document.getElementById("compscore").innerText=compscore;
+msg.innerText="Game reset. Play again!";
+  msg.style.backgroundColor="#24252d";
+}
+)
+
 //generated choice by computer 
 const generated =()=>{
     let option=["rock","paper","scissors"];
@@ -14,21 +32,29 @@ const generated =()=>{
      ///////DRAW FUNCTION////////
 const draw=()=>{
     console.log("drawww");
-  msg.innerText="draww";
+  msg.innerText="It's a Draw! ";
+            msg.style.backgroundColor="#6c7ac9";
+
 }
 
     ////////
+
     
     
     const winner = (userwin,userchoice,computer)=>{
         
         if(userwin){
-            console.log("you won");
-            msg.innerText="you won";
+              userscore++;
+    userscorep.innerText = userscore;
+            msg.innerText=`You win! Your ${userchoice} beats ${computer}`;
+            msg.style.backgroundColor="#4caf50";
         }
         else {
-            console.log("you lose");
-              msg.innerText="you lose";
+         compscore++;
+           compscorep.innerText=compscore;
+              msg.innerText=`You lost!  ${computer} beats Your ${userchoice} `;
+            msg.style.backgroundColor="#cf1c19";
+
         }
         
     };
@@ -61,6 +87,8 @@ const draw=()=>{
             else
             {userwin =computer === "rock" ? false :true; }
             winner(userwin,userchoice,computer);}
+            informer.innerText="Computer Chose:"
++computer;
         };
         
         
@@ -72,4 +100,10 @@ choices.forEach((choice)=>{
 }
 )
 
+  
+const msgg=document.querySelector("#msg");
 
+msgg.addEventListener("click",function(){
+    msgg.classList.add("msg-active");
+
+})
