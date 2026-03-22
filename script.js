@@ -46,13 +46,13 @@ const draw=()=>{
         if(userwin){
               userscore++;
     userscorep.innerText = userscore;
-            msg.innerText=`You win! Your ${userchoice} beats ${computer}`;
+            msg.innerText="You win! ';
             msg.style.backgroundColor="#4caf50";
         }
         else {
          compscore++;
            compscorep.innerText=compscore;
-              msg.innerText=`You lost!  ${computer} beats Your ${userchoice} `;
+              msg.innerText="You lost! ";
             msg.style.backgroundColor="#cf1c19";
 
         }
